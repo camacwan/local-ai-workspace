@@ -26,8 +26,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
                     ▼
          [ Hardware Pessoal (GPU VRAM + RAM) ]
 
-
-## Passo a Passo de Configuração
+Passo a Passo de Configuração
 1. Configurando o Servidor Local (LM Studio)
 1.1 Instale o LM Studio na sua máquina.
 
@@ -37,8 +36,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 1.4 Inicie o servidor local na porta padrão http://localhost:1234.
 
-
-##2. Estrutura do Projeto
+2. Estrutura do Projeto
 
 local-ai-workspace/
 ├── .gitignore
@@ -48,7 +46,8 @@ local-ai-workspace/
     ├── app.py          # Script de automação via terminal
     └── web_chat.py     # Interface de chat interativa no navegador
 
-## 3. Códigos de Exemplo (src/app.py)
+3. Códigos de Exemplo (src/app.py)
+
 
 
 from openai import OpenAI
@@ -77,10 +76,8 @@ if __name__ == "__main__":
     print(perguntar_ao_modelo("Explique as vantagens de usar SQLAlchemy com FastAPI."))
 
 
-
-## Criando um Chat no Navegador com Streamlit (src/web_chat.py)
+Criando um Chat no Navegador com Streamlit (src/web_chat.py)
 Para rodar uma interface visual de chat no seu navegador:
-
 
 import streamlit as st
 from openai import OpenAI
@@ -110,11 +107,11 @@ if prompt := st.chat_input("Digite sua mensagem..."):
 
 
 Para rodar no navegador, execute no terminal:
- streamlit run src/web_chat.py
+streamlit run src/web_chat.py
 
+Aprofundamento: Otimização, Quantização e Fine-Tuning
 
+Quantização GGUF: Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
 
-## Aprofundamento: Otimização, Quantização e Fine-Tuning
- ° Quantização GGUF: Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
+Fine-Tuning Local: Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
 
- ° Fine-Tuning Local: Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
