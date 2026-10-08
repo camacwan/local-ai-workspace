@@ -89,13 +89,7 @@ if __name__ == "__main__":
 
 ```
 
-```
 
----
-
-E aqui está a **Parte 3 (Streamlit e Aprofundamento)** — cole no final de tudo:
-
-```
 ---
 
 ## Criando um Chat no Navegador com Streamlit (src/web_chat.py)
