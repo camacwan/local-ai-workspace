@@ -42,12 +42,6 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 * **1.3** **Otimização de VRAM (GPU Offload):** Ajuste o slider para descarregar o máximo de camadas na placa de vídeo, garantindo alta velocidade de geração (tokens/sec).
 * **1.4** Inicie o servidor local na porta padrão `http://localhost:1234`.
 
-```
-
----
-
-
-```
 ---
 
 ## 2. Estrutura do Projeto
