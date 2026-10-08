@@ -12,6 +12,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 - **Modelos Base:** Família **Qwen** (Série 2.5 / 1.5) otimizados para código, lógica e língua portuguesa.
 - **Backend & Interface:** Python, SDK `openai` (cliente HTTP local), FastAPI e **Streamlit** (para interfaces de chat web).
 - **Hardware & Otimização:** Configurações focadas em maximizar o uso de VRAM de GPUs dedicadas (ex: arquiteturas NVIDIA RTX com suporte a CUDA/Tensor Cores).
+-** Spec Usada:** Ryzen 7 5700x | 32GB RAM | RTX 3080 12GB
 
 ---
 
