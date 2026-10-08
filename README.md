@@ -5,6 +5,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 ---
 
 ## Stack Tecnológica & Ecossistema
+
 - **Motor de Inferência / Servidor:** LM Studio / `llama.cpp` (expondo uma API REST compatível com o padrão OpenAI).
 - **Modelos Base:** Família **Qwen** (Série 2.5 / 1.5) otimizados para código, lógica e língua portuguesa.
 - **Backend & Interface:** Python, SDK `openai` (cliente HTTP local), FastAPI e **Streamlit** (para interfaces de chat web).
@@ -14,7 +15,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ## Arquitetura da Solução
 
-text
+
 [ Interface Web (Streamlit) ou Script Python ]
                     │
                     ▼ (Requisição HTTP via OpenAI Client)
@@ -25,7 +26,6 @@ text
                     │
                     ▼
          [ Hardware Pessoal (GPU VRAM + RAM) ]
-
 Passo a Passo de Configuração
 1. Configurando o Servidor Local (LM Studio)
 1.1 Instale o LM Studio na sua máquina.
@@ -38,6 +38,7 @@ Passo a Passo de Configuração
 
 2. Estrutura do Projeto
 
+
 local-ai-workspace/
 ├── .gitignore
 ├── README.md
@@ -48,7 +49,6 @@ local-ai-workspace/
 
 
 3. Códigos de Exemplo (src/app.py)
-
 
 
 from openai import OpenAI
@@ -75,10 +75,9 @@ def perguntar_ao_modelo(prompt: str):
 
 if __name__ == "__main__":
     print(perguntar_ao_modelo("Explique as vantagens de usar SQLAlchemy com FastAPI."))
-
-
 Criando um Chat no Navegador com Streamlit (src/web_chat.py)
 Para rodar uma interface visual de chat no seu navegador:
+
 
 import streamlit as st
 from openai import OpenAI
@@ -105,14 +104,11 @@ if prompt := st.chat_input("Digite sua mensagem..."):
     msg = response.choices[0].message.content
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
-
-
 Para rodar no navegador, execute no terminal:
+
 streamlit run src/web_chat.py
 
 Aprofundamento: Otimização, Quantização e Fine-Tuning
-
 Quantização GGUF: Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
 
 Fine-Tuning Local: Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
-
