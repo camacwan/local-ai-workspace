@@ -14,7 +14,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ## Arquitetura da Solução
 
-```text
+text
 [ Interface Web (Streamlit) ou Script Python ]
                     │
                     ▼ (Requisição HTTP via OpenAI Client)
@@ -45,6 +45,7 @@ local-ai-workspace/
 └── src/
     ├── app.py          # Script de automação via terminal
     └── web_chat.py     # Interface de chat interativa no navegador
+
 
 3. Códigos de Exemplo (src/app.py)
 
