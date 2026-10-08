@@ -17,7 +17,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ## Arquitetura da Solução
 
-```text
+```
 [ Interface Web (Streamlit) ou Script Python ]
                     │
                     ▼ (Requisição HTTP via OpenAI Client)
@@ -48,7 +48,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 Aqui está a **Parte 2 (Estrutura e o primeiro código Python)** — cole logo abaixo da Parte 1:
 
-```markdown
+```
 ---
 
 ## 2. Estrutura do Projeto
@@ -68,7 +68,7 @@ local-ai-workspace/
 
 ## 3. Códigos de Exemplo (src/app.py)
 
-```python
+```
 from openai import OpenAI
 
 client = OpenAI(
@@ -102,14 +102,14 @@ if __name__ == "__main__":
 
 E aqui está a **Parte 3 (Streamlit e Aprofundamento)** — cole no final de tudo:
 
-```markdown
+```
 ---
 
 ## Criando um Chat no Navegador com Streamlit (src/web_chat.py)
 
 Para rodar uma interface visual de chat no seu navegador:
 
-```python
+```
 import streamlit as st
 from openai import OpenAI
 
@@ -148,8 +148,3 @@ if prompt := st.chat_input("Digite sua mensagem..."):
 * **Quantização GGUF:** Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
 * **Fine-Tuning Local:** Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
 
-```
-
-Fazendo dessa forma, garantimos que os blocos de código mantenham os acentos graves delimitando perfeitamente cada seção. Salve no GitHub e me conte se agora o visual ficou tinindo!
-
-```
