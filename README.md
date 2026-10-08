@@ -1,3 +1,5 @@
+
+```
 # Local AI Workspace: Rodando, Otimizando e Integrando LLMs no Hardware Pessoal
 
 Guia prático, arquitetural e avançado para configurar um ambiente de Inteligência Artificial totalmente local, garantindo **privacidade de dados, zero custo com APIs e controle total de infraestrutura**.
@@ -15,7 +17,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ## Arquitetura da Solução
 
-text
+```text
 [ Interface Web (Streamlit) ou Script Python ]
                     │
                     ▼ (Requisição HTTP via OpenAI Client)
@@ -27,11 +29,31 @@ text
                     ▼
          [ Hardware Pessoal (GPU VRAM + RAM) ]
 
+```
+
+---
+
+## Passo a Passo de Configuração
+
+### 1. Configurando o Servidor Local (LM Studio)
+
+* **1.1** Instale o LM Studio na sua máquina.
+* **1.2** Na aba de busca, baixe um modelo eficiente da família Qwen em formato GGUF.
+* **1.3** **Otimização de VRAM (GPU Offload):** Ajuste o slider para descarregar o máximo de camadas na placa de vídeo, garantindo alta velocidade de geração (tokens/sec).
+* **1.4** Inicie o servidor local na porta padrão `http://localhost:1234`.
+
+```
+
+---
+
+Aqui está a **Parte 2 (Estrutura e o primeiro código Python)** — cole logo abaixo da Parte 1:
+
+```markdown
 ---
 
 ## 2. Estrutura do Projeto
 
-
+```text
 local-ai-workspace/
 ├── .gitignore
 ├── README.md
@@ -40,8 +62,13 @@ local-ai-workspace/
     ├── app.py          # Script de automação via terminal
     └── web_chat.py     # Interface de chat interativa no navegador
 
-3. Códigos de Exemplo (src/app.py)
+```
 
+---
+
+## 3. Códigos de Exemplo (src/app.py)
+
+```python
 from openai import OpenAI
 
 client = OpenAI(
@@ -67,11 +94,23 @@ def perguntar_ao_modelo(prompt: str):
 if __name__ == "__main__":
     print(perguntar_ao_modelo("Explique as vantagens de usar SQLAlchemy com FastAPI."))
 
-Criando um Chat no Navegador com Streamlit (src/web_chat.py)
- Para rodar uma interface visual de chat no seu navegador:
+```
 
+```
 
- import streamlit as st
+---
+
+E aqui está a **Parte 3 (Streamlit e Aprofundamento)** — cole no final de tudo:
+
+```markdown
+---
+
+## Criando um Chat no Navegador com Streamlit (src/web_chat.py)
+
+Para rodar uma interface visual de chat no seu navegador:
+
+```python
+import streamlit as st
 from openai import OpenAI
 
 st.title("💬 Meu ChatGPT Local (Privado & Offline)")
@@ -97,10 +136,20 @@ if prompt := st.chat_input("Digite sua mensagem..."):
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
 
-    Para rodar no navegador, execute no terminal:
-streamlit run src/web_chat.py
+```
 
-Aprofundamento: Otimização, Quantização e Fine-Tuning
-Quantização GGUF: Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
+> **Para rodar no navegador, execute no terminal:**
+> `streamlit run src/web_chat.py`
 
-Fine-Tuning Local: Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
+---
+
+## Aprofundamento: Otimização, Quantização e Fine-Tuning
+
+* **Quantização GGUF:** Comprime os pesos do modelo para rodar em placas de vídeo comuns sem perder capacidade lógica.
+* **Fine-Tuning Local:** Abordagens como QLoRA (usando bibliotecas como Unsloth ou PEFT) permitem adaptar modelos utilizando bases de dados proprietárias diretamente na VRAM do seu computador.
+
+```
+
+Fazendo dessa forma, garantimos que os blocos de código mantenham os acentos graves delimitando perfeitamente cada seção. Salve no GitHub e me conte se agora o visual ficou tinindo!
+
+```
