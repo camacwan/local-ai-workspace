@@ -17,7 +17,7 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ## Arquitetura da Solução
 
-```
+``` Estrutura
 [ Interface Web (Streamlit) ou Script Python ]
                     │
                     ▼ (Requisição HTTP via OpenAI Client)
@@ -46,14 +46,13 @@ Guia prático, arquitetural e avançado para configurar um ambiente de Inteligê
 
 ---
 
-Aqui está a **Parte 2 (Estrutura e o primeiro código Python)** — cole logo abaixo da Parte 1:
 
 ```
 ---
 
 ## 2. Estrutura do Projeto
 
-```text
+```
 local-ai-workspace/
 ├── .gitignore
 ├── README.md
